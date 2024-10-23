@@ -1,10 +1,65 @@
-﻿<table class="table table-bordered">
+﻿
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Processing Status</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .table {
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 0.5rem;
+            overflow: hidden; /* Prevents border-radius from being cut off */
+        }
+
+        .table thead {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .table th,
+        .table td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .table tbody tr {
+            transition: background-color 0.3s;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1; /* Light gray on hover */
+        }
+
+        .status-completed {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .status-error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>File Name</th>
             <th>Status</th>
             <th>Start Time</th>
-            <th>End Time</th>
         </tr>
     </thead>
     <tbody>
@@ -12,10 +67,12 @@
         {
             <tr>
                 <td>@file.FileName</td>
-                <td>@file.StatusName</td>
+                <td class="status-@file.StatusName.ToLower()">@file.StatusName</td>
                 <td>@file.ProcessStartTime</td>
-                <td>@file.ProcessEndTime</td>
             </tr>
         }
     </tbody>
 </table>
+
+
+
