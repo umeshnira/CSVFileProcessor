@@ -1,0 +1,21 @@
+﻿<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>File Name</th>
+            <th>Status</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.FileName</td>
+                <td>@file.StatusName</td>
+                <td>@file.ProcessStartTime</td>
+                <td>@file.ProcessEndTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
